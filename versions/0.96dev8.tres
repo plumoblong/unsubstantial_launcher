@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Version" format=3 uid="uid://ctvcxdskc85u3"]
+
+[ext_resource type="Script" uid="uid://dvra71fwwx3cg" path="res://version.gd" id="1_7h7dx"]
+
+[resource]
+script = ExtResource("1_7h7dx")
+release_date = "June 9th 2026"
+name = "0.96 dev 8"
+tag = "0.96dev8"
+test_build = true
+latest = true
+change_log = "[b]unsubstantial 0.96 dev 8[/b] 
+[i]released June 9th 2026[/i]
+ - many balancing changes
+ - new shards
+ - added a boss
+ - the enemies have animations now (wow)
+ - added shops and soul (capitalism and money)
+ - nerfed the dash (attack speed wont affect its cooldown and dash distance has been slightly reduced)
+ - updated the crystal select screen
+ - added back music (by nexiwisp, amnist and me. check them out!)
+ - enemy spawning now has a cooldown and enemies cant spawn behind walls
+ - updated all the maps
+ - added ⊡ items"
+metadata/_custom_type_script = "uid://dvra71fwwx3cg"

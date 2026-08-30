@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Version" format=3 uid="uid://c4beyt283dkwg"]
+
+[ext_resource type="Script" uid="uid://dvra71fwwx3cg" path="res://version.gd" id="1_unmqn"]
+
+[resource]
+script = ExtResource("1_unmqn")
+release_date = "Feb 8th 2026"
+name = "0.96 dev 7"
+tag = "0.96dev7"
+test_build = true
+metadata/_custom_type_script = "uid://dvra71fwwx3cg"

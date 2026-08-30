@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://vqqj0kaaqb74"]
+
+[ext_resource type="Script" uid="uid://bl4wteh5b6fmn" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dvra71fwwx3cg" path="res://version.gd" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://cmjm8tgh3s12l" path="res://download_manager.gd" id="2_h2yge"]
+[ext_resource type="Resource" uid="uid://ctvcxdskc85u3" path="res://versions/0.96dev8.tres" id="3_lquwl"]
+[ext_resource type="Resource" uid="uid://c4beyt283dkwg" path="res://versions/0.96dev7.tres" id="4_lquwl"]
+
+[node name="Main" type="Control" unique_id=481109644 node_paths=PackedStringArray("gh")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xm2m")
+gh = NodePath("DownloadManager")
+versions = Array[ExtResource("2_1bvp3")]([ExtResource("3_lquwl"), ExtResource("4_lquwl")])
+
+[node name="Panel" type="Panel" parent="." unique_id=406748456]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Control" parent="Panel" unique_id=1151809991]
+layout_mode = 1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -36.0
+offset_right = 1.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Play" type="Button" parent="Panel/Container" unique_id=1675545346]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.414375
+anchor_top = -0.4814815
+anchor_right = 0.585625
+anchor_bottom = 0.22222222
+grow_horizontal = 2
+grow_vertical = 0
+text = "     Play     "
+metadata/_edit_use_anchors_ = true
+
+[node name="VersionChoose" type="OptionButton" parent="Panel/Container" unique_id=1309219481]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23875
+anchor_top = -1.4166666
+anchor_right = 0.7675
+anchor_bottom = -0.8148148
+offset_left = -1.8950043
+offset_right = -1.8951416
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+alignment = 1
+clip_text = true
+selected = 0
+fit_to_longest_item = false
+search_bar_enabled = true
+search_bar_min_item_count = 1
+item_count = 2
+popup/item_0/text = "0.96 dev 8"
+popup/item_0/id = 0
+popup/item_1/text = "0.96 dev 7"
+popup/item_1/id = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ChangeLog" type="Panel" parent="Panel" unique_id=2074715096]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -141.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="RichTextLabel" parent="Panel/ChangeLog" unique_id=173371223]
+layout_mode = 0
+offset_right = 794.0
+offset_bottom = 120.0
+size_flags_vertical = 2
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "
+[b]unsubstantial_launcher"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="Panel/ChangeLog" unique_id=664235058]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 120.0
+offset_right = 730.0
+offset_bottom = 655.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/line_separation = 8
+bbcode_enabled = true
+text = "bruh
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+justification_flags = 130
+
+[node name="DownloadManager" type="Node" parent="." unique_id=160941886]
+script = ExtResource("2_h2yge")
+
+[connection signal="pressed" from="Panel/Container/Play" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="Panel/Container/VersionChoose" to="." method="_on_version_choose_item_selected"]
